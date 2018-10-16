@@ -57,9 +57,16 @@ WHERE salario <3000;
 SELECT nome, salario FROM TBL_FUNCIONARIO
 ORDER BY salario DESC /*asc*/
 
-/*INNER JOIN*/
+/*INNER JOIN - cria uma intersecção entre as informações das duas tabelas*/
 
 SELECT f.nome, f.salario, d.nome as depto
 FROM TBL_FUNCIONARIO as f
 INNER JOIN TBL_DEPTO as d on f.id_depto = d.id_depto
+ORDER BY d.nome asc, f.nome asc;
+
+
+/*LEFT JOIN - Acrescenta as informações da tabela direita na esquerda*/
+SELECT f.nome, f.salario, d.nome as depto
+FROM TBL_FUNCIONARIO as f
+LEFT JOIN TBL_DEPTO as d on f.id_depto = d.id_depto
 ORDER BY d.nome asc, f.nome asc;
