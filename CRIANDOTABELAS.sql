@@ -53,4 +53,6 @@ UPDATE TBL_FUNCIONARIO
 SET salario = salario*1.10
 WHERE salario <3000;
 
-
+/*Ordenar as tabelas */
+SELECT nome, salario FROM TBL_FUNCIONARIO
+ORDER BY salario DESC /*asc*/
