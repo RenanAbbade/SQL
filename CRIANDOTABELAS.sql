@@ -56,3 +56,10 @@ WHERE salario <3000;
 /*Ordenar as tabelas */
 SELECT nome, salario FROM TBL_FUNCIONARIO
 ORDER BY salario DESC /*asc*/
+
+/*INNER JOIN*/
+
+SELECT f.nome, f.salario, d.nome as depto
+FROM TBL_FUNCIONARIO as f
+INNER JOIN TBL_DEPTO as d on f.id_depto = d.id_depto
+ORDER BY d.nome asc, f.nome asc;
