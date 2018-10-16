@@ -70,3 +70,16 @@ SELECT f.nome, f.salario, d.nome as depto
 FROM TBL_FUNCIONARIO as f
 LEFT JOIN TBL_DEPTO as d on f.id_depto = d.id_depto
 ORDER BY d.nome asc, f.nome asc;
+
+/*RIGHT JOIN - Acrescenta as informações da tabela esquerda na direita*/
+SELECT f.nome, f.salario, d.nome as depto
+FROM TBL_FUNCIONARIO as f
+RIGHT JOIN TBL_DEPTO as d on f.id_depto = d.id_depto
+ORDER BY d.nome asc, f.nome asc;
+
+/*FULL JOIN - Faz uma união das duas tabelas*/
+
+SELECT f.nome, f.salario, d.nome as depto
+FROM TBL_FUNCIONARIO as f
+FULL JOIN TBL_DEPTO as d on f.id_depto = d.id_depto
+ORDER BY d.nome asc, f.nome asc;
