@@ -13,6 +13,8 @@ CREATE TABLE TBL_DEPTO (
 	PRIMARY KEY (id_depto)
 );
 
+/*New Query */
+
 INSERT INTO TBL_FUNCIONARIO (id_func,nome,salario,id_depto)
 	values (1,'Diego',2500,345),
 		   (2,'Maria',5500,456),
@@ -33,4 +35,14 @@ INSERT INTO TBL_DEPTO (id_depto, nome, ramal)
 SELECT * FROM TBL_FUNCIONARIO
 
 SELECT * FROM TBL_DEPTO
-		  
+
+/* New Query - Criando nova coluna tipo_cargo */
+
+SELECT nome, salario,
+	case when salario between 1 and 3000 then 'analista jr'
+		 when salario between 3001 and 5000 then 'analista pl'
+		 when salario between 5001 and 8000 then 'analista sr'
+	else 'Demais cargos'
+	end as tipo_cargo
+ FROM TBL_FUNCIONARIO
+
