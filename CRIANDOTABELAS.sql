@@ -45,4 +45,12 @@ SELECT nome, salario,
 	else 'Demais cargos'
 	end as tipo_cargo
  FROM TBL_FUNCIONARIO
+ 
+ /*Modificando valores de uma tabela com UPDATE */
+ 
+SELECT nome, salario FROM TBL_FUNCIONARIO
+UPDATE TBL_FUNCIONARIO
+SET salario = salario*1.10
+WHERE salario <3000;
+
 
