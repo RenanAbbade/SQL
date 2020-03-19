@@ -1,0 +1,14 @@
+CREATE OR REPLACE PROCEDURE Atualiza_qtd
+( descricao_prod IN PRODUTO.DESCRICAO%type,
+  cod_pedido IN ITEM_DO_PEDIDO.COD_PED%type,
+  novaQTD IN ITEM_DO_PEDIDO.QUANTIDADE%type
+)
+IS
+BEGIN
+UPDATE ITEM_DO_PEDIDO
+SET QUANTIDADE = novaQTD
+WHERE (cod_pedido = ITEM_DO_PEDIDO.COD_PED );
+END Atualiza_qtd;
+
+EXECUTE Atualiza_qtd('acucar', '102',250);
+
